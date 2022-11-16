@@ -1,0 +1,34 @@
+debug: 1
+
+device: /dev/ttyACM2
+frame_id: gps
+uart1:
+  baudrate: 115200
+config_on_startup: false
+
+rate: 1
+nav_rate: 1
+dynamic_model: automotive
+fix_mode: auto
+
+
+gnss:
+  gps: true
+  glonass: true      
+  beidou: true
+  galileo: true           
+  qzss: true
+
+# Whether to display all INF messages in console
+inf: 
+  all: false                
+  
+
+# Enable u-blox message publishers
+publish:
+  all: false
+  nav:
+    all: true
+    sat: true # extremely important
+  rxm:
+    all: true
