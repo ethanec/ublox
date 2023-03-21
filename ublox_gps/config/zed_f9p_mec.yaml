@@ -32,3 +32,4 @@ publish:
     sat: true # extremely important
   rxm:
     all: true
+    sfrb: true
