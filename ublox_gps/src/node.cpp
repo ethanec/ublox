@@ -1264,7 +1264,13 @@ void UbloxFirmware8::subscribe() {
   if (enabled["rxm_raw"]) {
     gps.subscribe<ublox_msgs::RxmRAWX>(boost::bind(
        publish<ublox_msgs::RxmRAWX>, _1, "rxmraw"), kSubscribeRate);
- }
+  }
+
+  nh->param("publish/rxm/sfrb", enabled["rxm_sfrb"], enabled["sfrb"]);
+  if (enabled["rxm_sfrb"]) {
+    gps.subscribe<ublox_msgs::RxmSFRBX>(boost::bind(
+       publish<ublox_msgs::RxmSFRBX>, _1, "rxmsfrb"), kSubscribeRate);
+  }
  // YC
 }
 
